@@ -1,0 +1,41 @@
+<!DOCTYPE>
+<html>
+<head>
+	<title>Temperature Converter</title>
+</head>
+<body> 
+	<h1 style="text-align: center;">Temperature Converter</h1>
+
+	<label  for= "celsius"> Celsius: </label>
+	<input type="number" id= "celsius" placeholder = "Enter Celsius Temperature">
+	<button onclick="convertToCelsius ()"> Convert To Fahrenheit </button>
+	<p id= "FahrenheitResult"></p>
+
+	<br>
+
+	<label for="Fahrenheit"> Fahrenheit: </label>
+	<input type="number" id="Fahrenheit" placeholder="Enter Fahrenheit Temperature">
+	<button onclick="convertToFahrenheit ()"> Convert To Celius </button>
+	<p id= "celsiusResult"></p>
+
+	<script>
+		function convertToCelsius () {
+			const celsiusInput=document.getElementById("celsius");
+			const FahrenheitResult= document.getElementById("FahrenheitResult");
+			const celsius= parseFloat(celsiusInput.value);
+			const Fahrenheit=(celsius * 9/5) + 32;
+			FahrenheitResult.textContent = ${celsius} degrees celsius is equal to ${Fahrenheit.toFixed(2)} degrees Fahrenheit;	
+
+		}
+        
+        function convertToFahrenheit() {
+			const FahrenheitInput=document.getElementById("Fahrenheit");
+			const celsiusResult= document.getElementById("celsiusResult");
+			const Fahrenheit = parseFloat(FahrenheitInput.value);
+			const celsius =(celsius - 32) * 5/9;
+			celsiusResult.textContent = ${Fahrenheit} degrees Fahrenheit is equal to ${celsius.toFixed(2)} degrees celsius;
+			}	
+
+	</script>
+</body>
+</html>
